@@ -1,0 +1,55 @@
+﻿@model IEnumerable<MvcTakip.Models.tblBolum>
+
+@{ 
+    Layout = null;
+}
+
+<h1 class="my-4">Bölümler</h1>
+<div class="list-group">
+    @foreach (var item in Model)
+    {
+        <a href="/Home/BolumKisi/@item.id" class="list-group-item d-flex justify-content-between align-items-center">@item.Bolum <span class="badge badge-primary badge-pill">@item.tblKisis.Count()</span> </a>
+        
+    }
+
+
+</div>
+<style>
+    .my-4{
+        font-size: 30px;
+        font-weight: 400;
+        line-height: 1.287;
+        margin-top: 0px;
+        margin-right: 0px;
+        margin-bottom: 0px;
+        margin-left: 5px;
+        color:#1E90FF;
+    }
+</style>
+
+
+@*<p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Bolum)
+            </th>
+            <th></th>
+        </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Bolum)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+                @Html.ActionLink("Details", "Details", new { id=item.id }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.id })
+            </td>
+        </tr>
+    }
+
+    </table>*@

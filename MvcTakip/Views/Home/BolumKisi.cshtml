@@ -1,0 +1,113 @@
+﻿@model IEnumerable<MvcTakip.Models.tblKisi>
+
+@{
+    ViewBag.Title = "BolumKisi";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using GridMvc.Html
+
+<div class="col-md-9">
+    @Html.Grid(Model).Columns(columns =>
+{
+    columns.Add(m => m.tblBolum.Bolum).Titled("Bölümün Adı").SetWidth(110).Sortable(true).Filterable(true);
+    columns.Add(m => m.Adi).Titled("Adı").Sortable(true).Filterable(true);
+    columns.Add(m => m.Soyadi).Titled("Soyadı").Sortable(true).Filterable(true);
+    columns.Add(m => m.Staj1).Titled("Staj 1").Sortable(true).Filterable(true);
+    columns.Add(m => m.Staj2).Titled("Staj 2").Sortable(true).Filterable(true);
+    columns.Add(m => m.IsYeriEgitimi).Titled("İş Yeri Eğitimi").Sortable(true).Filterable(true);
+    columns.Add(m => m.CalistigiYer).Titled("Çalıştığı Yer").Sortable(true).Filterable(true);
+}).WithPaging(6)
+
+</div>
+
+@*<table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.tblBolum.Bolum)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tblYetki.Yetki)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Adi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Soyadi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CalistigiYer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Agno)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MezunYil)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Eposta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sifre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Foto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Staj1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Staj2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsYeriEgitimi)
+            </th>
+
+        </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.tblBolum.Bolum)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tblYetki.Yetki)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Adi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Soyadi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CalistigiYer)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Agno)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MezunYil)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Eposta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sifre)
+            </td>
+            <td>
+                <img class="card-img-top" width="150" height="150" src="@item.Foto" alt="">
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Staj1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Staj2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsYeriEgitimi)
+            </td>
+
+        </tr>
+    }
+
+    </table>*@

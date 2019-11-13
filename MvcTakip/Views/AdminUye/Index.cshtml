@@ -1,0 +1,105 @@
+﻿@model IEnumerable<MvcTakip.Models.tblKisi>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+<p>
+    @Html.ActionLink("Yeni Mezun Ekle", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.tblBolum.Bolum)
+        </th>
+        
+        <th>
+            @Html.DisplayNameFor(model => model.Adi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Soyadi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CalistigiYer)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Agno)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MezunYil)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Eposta)
+        </th>
+      
+        <th>
+            @Html.DisplayNameFor(model => model.Foto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Staj1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Staj2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsYeriEgitimi)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.tblBolum.Bolum)
+        </td>
+      
+        <td>
+            @Html.DisplayFor(modelItem => item.Adi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Soyadi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CalistigiYer)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Agno)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MezunYil)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Eposta)
+        </td>
+       
+        <td>
+            <img class="user-img" width="150" height="150" src="@item.Foto" alt="">
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Staj1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Staj2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsYeriEgitimi)
+        </td>
+        <td>
+            
+            @Html.ActionLink("Detay", "Details", new { id=item.id }) |
+            @Html.ActionLink("Sil", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>
+<style>
+    .user-img{
+        border-radius:90%;
+        width:90px;
+        height:90px;
+       
+    }
+</style>

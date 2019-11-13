@@ -1,0 +1,123 @@
+﻿@model MvcTakip.Models.tblKisi
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>tblKisi</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.tblBolum.Bolum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tblBolum.Bolum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tblYetki.Yetki)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tblYetki.Yetki)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Adi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Adi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Soyadi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Soyadi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CalistigiYer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CalistigiYer)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Agno)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Agno)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MezunYil)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MezunYil)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Eposta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Eposta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sifre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sifre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Foto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Foto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Staj1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Staj1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Staj2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Staj2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsYeriEgitimi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsYeriEgitimi)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

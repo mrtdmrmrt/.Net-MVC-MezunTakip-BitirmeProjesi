@@ -1,0 +1,106 @@
+﻿@model IEnumerable<MvcTakip.Models.tblKisi>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.tblBolum.Bolum)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tblYetki.Yetki)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Adi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Soyadi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CalistigiYer)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Agno)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MezunYil)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Eposta)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sifre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Foto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Staj1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Staj2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsYeriEgitimi)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.tblBolum.Bolum)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tblYetki.Yetki)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Adi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Soyadi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CalistigiYer)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Agno)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MezunYil)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Eposta)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sifre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Foto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Staj1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Staj2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsYeriEgitimi)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>

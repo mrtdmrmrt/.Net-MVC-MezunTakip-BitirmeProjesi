@@ -1,0 +1,15 @@
+﻿@using (Html.BeginForm("Ara", "Home", FormMethod.Post,new { enctype="multipart/form-data"}))
+{
+    <div class="row">
+        <!-- Search Widget -->
+        <div class="card-body">
+            <div class="input-group">
+                <input name="ara" id="ara" type="text" class="form-control" placeholder="Sayfa İçinde Ara...">
+                <span class="input-group-btn">
+                    <button value="ara" class="btn btn-outline-info" type="submit"><i class="fas fa-search"></i></button>
+                </span>
+            </div>
+        </div>
+    </div>
+}
+

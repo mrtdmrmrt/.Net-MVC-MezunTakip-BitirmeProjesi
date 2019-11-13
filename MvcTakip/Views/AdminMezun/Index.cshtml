@@ -1,0 +1,91 @@
+﻿@using PagedList
+@using PagedList.Mvc
+@model IPagedList<MvcTakip.Models.tblKisi>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>@Html.Label("Bölüm")</th>
+        <th>@Html.Label("Adı")</th>
+        <th>@Html.Label("Soyadı")</th>
+        <th>@Html.Label("Çalıştığı Yer")</th>
+        <th>@Html.Label("Agno")</th>
+        <th>@Html.Label("Mezun Yılı")</th>
+        <th>@Html.Label("Eposta")</th>
+        <th>@Html.Label("Fotoğraf")</th>
+        <th>@Html.Label("Staj 1")</th>
+        <th>@Html.Label("Staj 2")</th>
+        <th>@Html.Label("İş Yeri Eğitimi")</th>
+       
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.tblBolum.Bolum)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Adi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Soyadi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CalistigiYer)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Agno)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MezunYil)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Eposta)
+            </td>
+
+            <td>
+                <img class="card-img-top" width="150" height="150" src="@item.Foto" alt="">
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Staj1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Staj2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsYeriEgitimi)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.id })
+            </td>
+        </tr>
+    }
+
+</table>
+<div class="row">
+    <div class="col-md-8 text-center">
+        <div class="pagination-sm">
+            @Html.PagedListPager(Model, Page => Url.Action("Index", new { Page }), new PagedListRenderOptions
+       {
+           UlElementClasses = new string[] { "pagination" },
+           LiElementClasses = new string[] { "page-link" }
+
+
+       })
+        </div>
+    </div>
+</div>
+
+

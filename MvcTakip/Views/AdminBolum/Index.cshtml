@@ -1,0 +1,33 @@
+﻿@model IEnumerable<MvcTakip.Models.tblBolum>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+<p>
+    @Html.ActionLink("Yeni Bölüm Ekle", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            <h3>Bölümler</h3>
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Bolum)
+        </td>
+        <td>
+            @Html.ActionLink("Düzenle", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Detay", "Details", new { id=item.id }) |
+            @Html.ActionLink("Sil", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>

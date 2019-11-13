@@ -1,0 +1,70 @@
+﻿@model IEnumerable<MvcTakip.Models.tblKisi>
+
+@{
+    ViewBag.Title = "Ara";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br>
+<table class="table table-hover">
+    <thead>
+        <tr class="table-info">
+            <th>Fotoğraf</th>
+            <th>Adı</th>
+            <th>Soyadı</th>
+            <th>Bölümü</th>
+            <th>Staj 1</th>
+            <th>Staj 2</th>
+            <th>İş Yeri Eğitimi</th>
+            <th>Çalıştığı Şirket</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td><img class="user-img" height="75" width="75" src="@item.Foto" alt=""> </td>
+                <td><a href="/Home/KisiDetay/@item.id" style="text-decoration: none;">@item.Adi </a></td>
+                <td>@item.Soyadi </td>
+                <td>@item.tblBolum.Bolum </td>
+                <td>@item.Staj1 </td>
+                <td>@item.Staj2 </td>
+                <td>@item.IsYeriEgitimi </td>
+                <td>@item.CalistigiYer </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+
+<style>
+    .user-img {
+        border-top-left-radius: 50%;
+        border-top-right-radius: 50%;
+        border-bottom-right-radius: 50%;
+        border-bottom-left-radius: 50%;
+        display: inline-block;
+        position: relative;
+        max-width: 100%;
+        vertical-align: middle;
+        border-top-color: initial;
+        border-top-style: initial;
+        border-top-width: 0px;
+        border-right-color: initial;
+        border-right-style: initial;
+        border-right-width: 0px;
+        border-bottom-color: initial;
+        border-bottom-style: initial;
+        border-bottom-width: 0px;
+        border-left-color: initial;
+        border-left-style: initial;
+        border-left-width: 0px;
+        border-image-source: initial;
+        border-image-slice: initial;
+        border-image-width: initial;
+        border-image-outset: initial;
+        border-image-repeat: initial;
+        box-sizing: border-box;
+    }
+</style>
