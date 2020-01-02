@@ -4,7 +4,7 @@
     ViewBag.Title = "Details";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
-
+<div class="adminBolumDetail">
 
 <div>
     
@@ -20,6 +20,13 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Düzenle", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Düzenle", "Edit", new { id = Model.id }, new { @class="btn btn-outline-primary"}) |
     @Html.ActionLink("Geri Dön", "Index")
 </p>
+</div>
+
+<style>
+    .adminBolumDetail{
+        margin-left:30px;
+    }
+</style>

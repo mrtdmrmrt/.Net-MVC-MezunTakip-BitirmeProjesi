@@ -29,6 +29,7 @@ namespace MvcTakip.Controllers
         [HttpPost]
         public ActionResult Login(tblKisi uye)
         {
+            
             var login = db.tblKisis.Where(u => u.Eposta == uye.Eposta).SingleOrDefault();
             if(login.Eposta == uye.Eposta && login.Sifre == uye.Sifre)
             {
@@ -41,7 +42,7 @@ namespace MvcTakip.Controllers
             }
             else
             {
-                ViewBag.Uyari = "Mail ya da Şifrenizi Kontrol Ediniz";
+                ViewBag.Uyari = true;
                 return View();
             }
             

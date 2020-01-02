@@ -4,9 +4,52 @@
     ViewBag.Title = "Details";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
+<div class="detail">
+    <h2>Kişi Bilgileri</h2>
+    <hr>
+    <div class="container">
+        <div class="row">
+            <div class="footer">
+                <p class="adi">@Model.Adi @Model.Soyadi </p>
+                <p class="bolum">@Model.tblBolum.Bolum </p>
+            </div>
+        </div>
+        <br>
 
-<h2>Kişi Bilgileri</h2>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="row">
+                    <img class="user-img" height="120" width="120" src="@Model.Foto" alt="">
+                </div>
+                <div class="row">
+                    <span class="link">
+                        <a href="https://www.linkedin.com/in/mert-demir-6784b4168/" style="text-decoration: none;" target="_blank"><i class="fab fa-linkedin-in"> </i> </a>
+                        <a href="https://www.mert.demir96@hotmail.com/" style="text-decoration: none;" target="_blank"> <i class="far fa-envelope"></i></a>
+                    </span>
+                </div>
 
+            </div>
+            <div class="col-md-9">
+                <p><strong>Mezun Yılı :</strong> @Model.MezunYil <strong style="margin-left:20px;"> AGNO :</strong> @Model.Agno</p>
+                <hr>
+                <p><strong>Staj 1 :</strong> @Model.Staj1</p>
+                <p><strong>Staj 2 :</strong> @Model.Staj2</p>
+                <p><strong>İş Yeri Eğitimi :</strong> @Model.IsYeriEgitimi</p>
+                <p><strong>Çalıştığı Şirket :</strong> @Model.CalistigiYer</p>
+                <hr>
+                <p><strong>E-Posta :</strong> @Model.Eposta</p>
+            </div>
+        </div>
+    </div>
+
+
+
+    <p>
+
+        @Html.ActionLink("Geri Dön", "Index")
+    </p>
+</div>
+<!--
 <div>
   
     <hr />
@@ -102,7 +145,89 @@
 
     </dl>
 </div>
-<p>
-   
-    @Html.ActionLink("Geri Dön", "Index")
-</p>
+    -->
+
+<style scoped>
+    .detail{
+        margin-left:20px;
+        margin-top:20px;
+    }
+    .link {
+        margin-top: 20px;
+        margin-left: 90px;
+    }
+
+    .row .footer {
+        height:125px;
+        background-color: #343a40 !important;
+        color: #fff;
+        margin-top: 0px;
+        margin-right: 0px;
+        margin-bottom: 0px;
+        margin-left: 0px;
+        padding-top: 0px;
+        padding-right: 0px;
+        padding-bottom: 0px;
+        padding-left: 0px;
+    }
+
+    .footer {
+        display: table;
+        table-layout: fixed;
+        width: 100%;
+        padding-top: 40px;
+        padding-right: 0px;
+        padding-bottom: 34px;
+        padding-left: 0px;
+    }
+
+        .footer .adi {
+            font-size: 30px;
+            font-weight: 400;
+            line-height: 1.287;
+            margin-top: 20px;
+            margin-right: 0px;
+            margin-bottom: 0px;
+            margin-left: 50px;
+        }
+
+        .footer .bolum {
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 1.287;
+            margin-top: 7px;
+            margin-right: 0px;
+            margin-bottom: 0px;
+            margin-left: 50px;
+        }
+
+    .user-img {
+        border-top-left-radius: 50%;
+        border-top-right-radius: 50%;
+        border-bottom-right-radius: 50%;
+        border-bottom-left-radius: 50%;
+        display: inline-block;
+        position: relative;
+        max-width: 100%;
+        vertical-align: middle;
+        border-top-color: initial;
+        border-top-style: initial;
+        border-top-width: 0px;
+        border-right-color: initial;
+        border-right-style: initial;
+        border-right-width: 0px;
+        border-bottom-color: initial;
+        border-bottom-style: initial;
+        border-bottom-width: 0px;
+        border-left-color: initial;
+        border-left-style: initial;
+        border-left-width: 0px;
+        border-image-source: initial;
+        border-image-slice: initial;
+        border-image-width: initial;
+        border-image-outset: initial;
+        border-image-repeat: initial;
+        box-sizing: border-box;
+        margin-left: 50px;
+    }
+</style>

@@ -4,7 +4,7 @@
     ViewBag.Title = "Create";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
-
+<div class="adminBolumCreate">
 @using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
@@ -31,3 +31,10 @@
 <div>
     @Html.ActionLink("Geri Dön", "Index")
 </div>
+</div>
+
+<style>
+    .adminBolumCreate{
+        margin-left:30px;
+    }
+</style>

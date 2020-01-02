@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-
+<div class="adminBolumDelete">
 <h3>Silmeyi Onaylıyor musunuz?</h3>
 <div>
     
@@ -24,8 +24,16 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-outline-danger" /> |
+            <input type="submit" value="Sil" class="btn btn-outline-danger" /> |
             @Html.ActionLink("Geri Dön", "Index")
         </div>
     }
 </div>
+</div>
+
+<style>
+    .adminBolumDelete{
+        margin-left:30px;
+        margin-right:30px;
+    }
+</style>

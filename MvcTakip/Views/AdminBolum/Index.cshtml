@@ -5,11 +5,11 @@
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-
+<div class="admin">
 <p>
-    @Html.ActionLink("Yeni Bölüm Ekle", "Create")
+    @Html.ActionLink("Yeni Bölüm Ekle", "Create", new object { }, new {@class = "btn btn-outline-info" })
 </p>
-<table class="table">
+<table class="table table-hover">
     <tr>
         <th>
             <h3>Bölümler</h3>
@@ -23,11 +23,18 @@
             @Html.DisplayFor(modelItem => item.Bolum)
         </td>
         <td>
-            @Html.ActionLink("Düzenle", "Edit", new { id=item.id }) |
-            @Html.ActionLink("Detay", "Details", new { id=item.id }) |
-            @Html.ActionLink("Sil", "Delete", new { id=item.id })
+            @Html.ActionLink("Düzenle", "Edit", new { id = item.id },new { @class="btn btn-outline-success"}) |
+            @Html.ActionLink("Detay", "Details", new { id=item.id }, new { @class = "btn btn-outline-primary" }) |
+            @Html.ActionLink("Sil", "Delete", new { id=item.id }, new { @class = "btn btn-outline-danger" })
         </td>
     </tr>
 }
 
 </table>
+</div>
+<style scoped>
+    .admin{
+        margin-left: 20px;
+        margin-right:20px;
+    }
+</style>

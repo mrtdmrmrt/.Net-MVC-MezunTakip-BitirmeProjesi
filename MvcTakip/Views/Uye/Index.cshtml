@@ -138,11 +138,16 @@
     </dl>
 </div>
     -->
-<p>
-    @Html.ActionLink("Güncelle", "Edit", new { id = Model.id },new { @class="btn btn-outline-info"}) 
-    
-</p>
+<div class="Update">
+    <p>
+        @Html.ActionLink("Güncelle", "Edit", new { id = Model.id }, new { @class = "btn btn-outline-info" })
+
+    </p>
+</div>
 <style>
+    .Update{
+        margin-left:30px;
+    }
     .link {
         margin-top: 20px;
         margin-left: 60px;

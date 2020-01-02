@@ -4,8 +4,8 @@
     ViewBag.Title = "Create";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
-
-<h2>Create</h2>
+<div class="adminUyeCreate">
+<h2 style="color:gray;">Yeni Mezun Ekle</h2>
 
 
 @using (Html.BeginForm("Create", "Uye", FormMethod.Post, new { enctype = "multipart/form-data" }))
@@ -27,7 +27,7 @@
 
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Foto, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Foto, "Fotoğraf" , htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 <input type="file" name="Foto" id="Foto" value="" accept=".jpg,.png,.gif,.JPEG,.jpeg" class="form-control">
                 @Html.ValidationMessageFor(model => model.Foto, "", new { @class = "text-danger" })
@@ -35,7 +35,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Adi, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Adi, "Adı" , htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Adi, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Adi, "", new { @class = "text-danger" })
@@ -43,7 +43,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Soyadi, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Soyadi, "Soyadı" , htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Soyadi, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Soyadi, "", new { @class = "text-danger" })
@@ -58,7 +58,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Sifre, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Sifre, "Şifre" ,htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Sifre, new { htmlAttributes = new { @class = "form-control", @type = "password" } })
                 @Html.ValidationMessageFor(model => model.Sifre, "", new { @class = "text-danger" })
@@ -79,7 +79,7 @@
             </div>
         </div>
         <div class="form-group">
-            @Html.LabelFor(model => model.IsYeriEgitimi, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.IsYeriEgitimi, "İşyeri Eğitimi" ,htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.IsYeriEgitimi, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.IsYeriEgitimi, "", new { @class = "text-danger" })
@@ -88,7 +88,7 @@
 
 
         <div class="form-group">
-            @Html.LabelFor(model => model.CalistigiYer, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.CalistigiYer, "Çalıştığı Firma/Kurum" , htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.CalistigiYer, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.CalistigiYer, "", new { @class = "text-danger" })
@@ -98,15 +98,15 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Agno, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Agno, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.Agno, new { htmlAttributes = new { @class = "form-control" , @placeholder = "Örneğin (0,00)" } })
                 @Html.ValidationMessageFor(model => model.Agno, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.MezunYil, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.MezunYil, "Mezun Olduğu Yıl " ,htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.MezunYil, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.MezunYil, new { htmlAttributes = new { @class = "form-control", @placeholder = "Örneğin (2019)" } })
                 @Html.ValidationMessageFor(model => model.MezunYil, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -125,3 +125,11 @@
 <div>
     @Html.ActionLink("Geri Dön", "Index")
 </div>
+</div>
+
+<style>
+    .adminUyeCreate{
+        margin-left:30px;
+        margin-right:30px;
+    }
+</style>

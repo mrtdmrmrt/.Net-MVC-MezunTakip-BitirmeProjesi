@@ -5,10 +5,45 @@
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-
+<div class="adminUye">
 <p>
-    @Html.ActionLink("Yeni Mezun Ekle", "Create")
+    @Html.ActionLink("Yeni Mezun Ekle", "Create", new object { }, new { @class = "btn btn-outline-info" })
 </p>
+<table class="table table-hover">
+    <thead>
+        <tr class="table-info">
+            <th>Fotoğraf</th>
+            <th>Adı</th>
+            <th>Soyadı</th>
+            <th>Bölümü</th>
+            <th>Staj 1</th>
+            <th>Staj 2</th>
+            <th>İş Yeri Eğitimi</th>
+            <th>Çalıştığı Şirket</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td><img class="user-img" height="75" width="75" src="@item.Foto" alt=""> </td>
+                <td><a href="/Home/KisiDetay/@item.id "target="_blank" style="text-decoration: none;">@item.Adi </a></td>
+                <td>@item.Soyadi </td>
+                <td>@item.tblBolum.Bolum </td>
+                <td>@item.Staj1 </td>
+                <td>@item.Staj2 </td>
+                <td>@item.IsYeriEgitimi </td>
+                <td>@item.CalistigiYer </td>
+                <td>@Html.ActionLink("Detay", "Details", new { id = item.id }, new { @class = "btn btn-outline-info" }) |
+                @Html.ActionLink("Sil", "Delete", new { id = item.id }, new { @class = "btn btn-outline-danger" })</td>
+            </tr>
+        }
+    </tbody>
+</table>
+</div>
+
+@*
 <table class="table">
     <tr>
         <th>
@@ -95,11 +130,16 @@
 }
 
 </table>
-<style>
+*@
+<style scoped>
     .user-img{
         border-radius:90%;
         width:90px;
         height:90px;
        
+    }
+    .adminUye{
+        margin-left:20px;
+        margin-right:20px;
     }
 </style>
